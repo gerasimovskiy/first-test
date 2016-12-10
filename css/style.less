@@ -19,6 +19,22 @@
 	border: none;
 	outline-style: none;
 }
+.link() {
+	text-decoration: none;
+	color: #FFF;
+	font-size: 13px;
+	line-height: 1.5;
+	font-weight: 400;
+}
+.hover() {
+	-webkit-transition: all .5s ease-out;
+	   -moz-transition: all .5s ease-out;
+	    -ms-transition: all .5s ease-out;
+	     -o-transition: all .5s ease-out;
+	        transition: all .5s ease-out;
+}
+@hover-color: #343C48;
+
 
 
 
@@ -27,11 +43,11 @@
 	.common;
 }
 
-
+// //////////////////MASTHEAD
 .masthead {
 	background: url(../img/header-bg_01.jpg) 50% no-repeat;
 	height: 800px;
-	padding: 50px 4%;
+	padding: 20px 4%;
 	&-title {
 		.font-col-wh;
 		font-size: 55px;
@@ -53,8 +69,9 @@ header {
 	}
 	.header-menu {
 		float: right;
-		margin-top: 15px;
+		margin-top: 35px;
 		margin-left: 20px;
+		cursor: pointer;
 		&__line {
 			background-color: #FFF;
 			width: 17px;
@@ -70,11 +87,19 @@ header {
 		float: right;
 		.font-col-wh;
 		margin-left: 20px;
+		margin-top: 20px;
+		cursor: pointer;
+		.hover;
+		&:hover {
+			background-color: #343C48;
+			.hover;
+		}
 	}
 	.header-search-box {
 		float: right;
 		width: 250px;
 		height: 43px;
+		margin-top: 20px;
 		.brd-rad;
 		background-color: #343C48;
 		padding: 10px 0;
@@ -84,16 +109,28 @@ header {
 		&__area {
 			.brd-rad;
 			background: transparent;
+			width: 80%;
+			height: 100%;
 			vertical-align: middle;
 			padding-left: 10px;
 			.font-col-wh;
 		}
 		&__btn {
-			background-img: url(../img/search.png 50% 50% no-repeat);
+			width: 10%;
+			height: 100%;
+			outline-style: none;
+			border: none;
+			cursor: pointer;
+			background: transparent url(../img/search.png) 100% 50% no-repeat;
 			vertical-align: middle;
 		}
 	}
 }
+///////////END MASTHEAD
+
+
+
+/////////// UNDERHEADER
 .underheader {
 	background-color: #835FA8;
 	height: 520px;
@@ -119,12 +156,16 @@ header {
 		font-size: 14px;
 		background-color: #3DD2AE;
 		cursor: pointer;
+		.hover;
+		&:hover {
+			background-color: @hover-color;
+			.hover;
+		}
 	}
 	&-img-one {
 		position: absolute;
 		top: 244px;
 		right: 36%;
-		// z-index: 1;
 	}
 	&-img-two {
 		position: absolute;
@@ -133,6 +174,12 @@ header {
 		width: 360px;
 	}
 }
+//////////END UNDERHEADER
+
+
+
+
+///////////ABOUT
 .about {
 	background-color: #fff;
 	width: 100%;
@@ -147,14 +194,10 @@ header {
 		-webkit-flex-direction: column;
 		    -ms-flex-direction: column;
 		        flex-direction: column;
-	  // -webkit-justify-content: space-between;
-	  //         justify-content: space-between;
-	  // z-index: 2;
 	  &__title {
 	  	font-size: 30px;
 	  	font-weight: 300;
 	  	color: #2B303B;
-	  	
 	  }
 	  &__text {
 	  	padding: 33px 0;
@@ -173,6 +216,11 @@ header {
 	  	font-size: 14px;
 	  	font-weight: 600;
 	  	background-color: #3DD2AE;
+	  	.hover;
+	  	&:hover {
+	  		background-color: @hover-color;
+	  		.hover;
+	  	}
 	  }
 	}
 	&-circle {
@@ -181,10 +229,15 @@ header {
 		.brd-rad;
 		background-color: #fff;
 		position: absolute;
-		bottom: -43px;
+		bottom: -35px;
 		left: 47%;
 	}
 }
+///////END ABOUT
+
+
+
+///////DESIGN
 .design {
 	width: 100%;
 	background-color: #232831;
@@ -242,14 +295,19 @@ header {
 			bottom: 0;
 			margin: auto;
 			cursor: pointer;
+			.hover;
+			&:hover {
+				.hover;
+				background-color: @hover-color;
+			}
 		}
 	}
 }
+//////////END DESIGN
 
 
 
-
-
+///////////WORKS
 .works {
 	padding: 80px 8% ;
 	background-color: #2B303B;
@@ -259,7 +317,6 @@ header {
 	&-item {
 		width: 23%;
 		&__icon{
-			
 		}
 		&__title {
 			.font-col-wh;
@@ -278,18 +335,19 @@ header {
 		}
 	}
 }
+////////////END WORKS
 
 
 
+////////////PORTFOLIO
 .portfolio {
-	padding-left: 8%;
 	display: flex;
 	-webkit-flex-flow: row wrap;
 	    -ms-flex-flow: row wrap;
 	        flex-flow: row wrap;
 	&-item {
 		width: 50%;
-		// padding: 80px 80px 80px 40px;
+		position: relative;
 		&__icon {
 			display: inline-block;
 		}
@@ -315,18 +373,188 @@ header {
 		}
 		&__img {
 			width: 100%;
+			height: 100%;
 		}
 		&__title-date {
 			font-size: 12px;
 			font-size: italic;
-			padding: 60px 0 0 50px;
 			.font-col-wh;
 		}
 		&__text-italic {
-			
+			font-size: 32px;
+			font-weight: 300;
+			font-style: italic;
+			line-height: 1.4;
+			.font-col-wh;
+			padding: 10px 0 20px;
 		}
-		&--mod {
+		& img {
+			vertical-align: middle;
+		}
+		&__text-name {
+			display: inline-block;
+			font-size: 15px;
+			font-weight: 400;
+			.font-col-wh;
+			vertical-align: middle;
+			padding-left: 15px;
+		}
+		&__btn {
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background-color: #232323;
+			border: none;
+			outline-style: none;
+			width: 100px;
+			height: 30px;
+			.font-col-wh;
+			font-size: 12px;
+			font-weight: 400;
+			cursor: pointer;
+		}
+		&__text-bottom {
+			color: #535353;
+			font-size: 12px;
+			font-weight: 600;
+			& span {
+				color: #535353;
+				font-size: 30px;
+				font-weight: 300;
+				padding-right: 20px;
+			}
+		}
+		&--bg-one {
 			background-color: #835FA8;
+		}
+		&--bg-two {
+			background-color: #E9EEF1;
+		}
+		&--pad {
+			padding-left: 8%;
+		}
+		&--pad-r {
+			padding-right: 8%;
+		}
+		&--pad-text {
+			padding: 60px 50px;
+		}
+		&--arrow {
+			&:after {
+				content: "";
+				position: absolute;
+				display: block;
+				width: 0;
+				height: 0;
+				border-top: 12px solid transparent;
+				border-bottom: 12px solid transparent;
+				border-left: 12px solid #fff;
+				top: 50%;
+				right: -10px;
+				z-index: 2;
+			}
+		}
+	}
+	&-item-bot {
+		width: 100%;
+		height: 600px;
+		background: url(../img/8_02.jpg) 50% 50% no-repeat;
+		&--pad {
+			padding: 90px 0 90px 8%;
 		}
 	}
 }
+////////////END PORTFOLIO
+
+
+
+/////////////FOOTER
+footer {
+	background-color: #1A2124;
+	width: 100%;
+	padding: 100px 8% 140px;
+	.font-col-wh;
+}
+.footer-get {
+	float: left;
+	width: 45%;
+	&__title {
+		font-size: 13px;
+		font-weight: 600;
+		padding-bottom: 25px;
+	}
+	&__text {
+		line-height: 2;
+		font-size: 13px;
+		font-weight: 400;
+	}
+}
+.footer-stay {
+	float: right;
+	width: 45%;
+	&__form {
+		width: 90%;
+		height: 50px;
+		font-size: 0;
+		&-area {
+			background: #FFF;
+			border: none;
+			outline-style: none;
+			width: 87%;
+			height: 100%;
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 20px;
+			padding-left: 5px;
+		}
+		&-btn {
+			display: inline-block;
+			width: 13%;
+			height: 100%;
+			background-color: #835FA8;
+			vertical-align: middle;
+			position: relative;
+			cursor: pointer;
+			& svg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				margin: auto;
+			}
+		}
+	}
+	&__text {
+		padding-top: 20px;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 1.5;
+	}
+}
+
+.footer-menu {
+	clear: both;
+	padding-top: 20px;
+	&-list {
+		list-style: none;
+		display: inline-block;
+		margin-right: 80px;
+		&:first-child {
+			font-weight: 600;
+		}
+		& a {
+			.link;
+			& li {
+				padding: 5px 0;
+				.hover;
+				&:hover {
+					.hover;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+/////////////END FOOTER
